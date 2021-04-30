@@ -117,4 +117,26 @@ router.post('/todoListRemove', (req, res) => {
 })
 
 
+
+router.post('/updateData', (req, res) => {
+
+    var id = req.body.id;
+    var data = req.body.data;
+    var updateObj = { status: data };
+
+
+
+
+    TodoList.findByIdAndUpdate(id, updateObj, { new: true }, function (err, docs) {
+        if (err) {
+            res.status(422).json({ success: false, message: "Failed to delete" });
+        }
+        else {
+            res.status(200).json({ success: true, message: "Successfully Deleted" });
+        }
+    });
+
+})
+
+
 module.exports = { router }
