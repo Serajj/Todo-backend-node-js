@@ -101,8 +101,8 @@ router.post('/delete', (req, res) => {
 
 router.post('/todoListRemove', (req, res) => {
 
-
-    res.status(200).json({ sucess: true, id: req.body.id })
+    var myid = req.body.id;
+    res.status(200).json({ sucess: true, id: myid })
 
     // var id = req.body.id;
 
