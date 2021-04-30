@@ -121,7 +121,13 @@ router.post('/todoListRemove', (req, res) => {
 router.post('/updateData', (req, res) => {
 
     var id = req.body.id;
-    var data = req.body.status;
+    var mdata = req.body.status;
+
+    if (mdata == "Review") {
+        var data = "Complete"
+    } else {
+        var data = "Review"
+    }
     var updateObj = { status: data };
 
 
