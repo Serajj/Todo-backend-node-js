@@ -79,16 +79,21 @@ router.get('/getTodoList', (req, res) => {
 
 router.post('/delete', (req, res) => {
 
-    var id = req.body.id;
 
-    TodoList.findByIdAndDelete(id, function (err, docs) {
-        if (err) {
-            res.status(422).json({ success: false, message: "Failed to delete" });
-        }
-        else {
-            res.status(200).json({ success: true, message: "Successfully Deleted" });
-        }
-    });
+    res.status(200).json({ sucess: true })
+
+    // var id = req.body.id;
+
+
+
+    // TodoList.findByIdAndDelete(id, function (err, docs) {
+    //     if (err) {
+    //         res.status(422).json({ success: false, message: "Failed to delete" });
+    //     }
+    //     else {
+    //         res.status(200).json({ success: true, message: "Successfully Deleted" });
+    //     }
+    // });
 
 })
 
