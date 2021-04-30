@@ -121,7 +121,7 @@ router.post('/todoListRemove', (req, res) => {
 router.post('/updateData', (req, res) => {
 
     var id = req.body.id;
-    var data = req.body.data;
+    var data = req.body.status;
     var updateObj = { status: data };
 
 
