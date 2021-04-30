@@ -77,7 +77,7 @@ router.get('/getTodoList', (req, res) => {
 })
 
 
-router.post('/delete', checkCsrf, (req, res) => {
+router.post('/delete', (req, res) => {
 
     var id = req.body.id;
 
