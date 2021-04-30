@@ -7,13 +7,7 @@ const mongoose = require('mongoose');
 const { router } = require('./controller/todoController');
 const bodyParser = require('body-parser');
 const uri = "mongodb+srv://seraj_alam:Mongodb@123@cluster0.bcajl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-// const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-// client.connect(err => {
-//     const collection = client.db("test").collection("devices");
-//     // perform actions on the collection object
-//     console.log("Mongodb connected");
-//     client.close();
-// });
+
 
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true }, (err, link) => {
     console.log("Connected sussessfully");
@@ -27,8 +21,7 @@ app.use('/api', router)
 
 
 app.get('/', (req, res, next) => {
-
-    res.send("Hello");
+    res.status(200).json({ success: true, message: "How are you ?" });
 })
 
 app.listen(3000, () => {
