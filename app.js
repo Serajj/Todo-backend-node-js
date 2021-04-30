@@ -24,6 +24,6 @@ app.get('/', (req, res, next) => {
     res.status(200).json({ success: true, message: "How are you ?" });
 })
 
-app.listen(3000, () => {
-    console.log("App running at port 3000");
-})
+app.listen(process.env.PORT || 3000, function () {
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+});
