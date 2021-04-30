@@ -129,10 +129,10 @@ router.post('/updateData', (req, res) => {
 
     TodoList.findByIdAndUpdate(id, updateObj, { new: true }, function (err, docs) {
         if (err) {
-            res.status(422).json({ success: false, message: "Failed to delete" });
+            res.status(422).json({ success: false, message: "Failed to update" });
         }
         else {
-            res.status(200).json({ success: true, message: "Successfully Deleted" });
+            res.status(200).json({ success: true, message: "Successfully updated" });
         }
     });
 
