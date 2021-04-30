@@ -7,7 +7,10 @@ const mongoose = require('mongoose');
 const { router } = require('./controller/todoController');
 const bodyParser = require('body-parser');
 const uri = "mongodb+srv://seraj_alam:Mongodb@123@cluster0.bcajl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+var cors = require('cors');
 
+// use it before all route definitions
+app.use(cors({ origin: 'https://serajtodoapp.herokuapp.com/' }));
 
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true }, (err, link) => {
     console.log("Connected sussessfully");
